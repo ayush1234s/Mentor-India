@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mentor India</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/course.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/subscribed/js/subscribe.js"></script>
+  <script src="js/coding.js"></script>
+
+  <!-- =======================================================
+  * Template Name: eNno
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+    /* Profile image styles */
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Mentor India</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="/subscribed/subscribe_course.aspx.htm">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="https://mentor-portal.netlify.app">Portals</a></li>
+            <li><a class="nav-link scrollto" href="/subscribed/Mentor_Store/mentorStore.php.htm">Mentor Store</a></li>
+            <li><a class="nav-link scrollto" href="/subscribed/contact.php.htm">Contact</a></li>
+            <!-- Profile Dropdown -->
+            <li class="dropdown">
+                <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a id="profile-name" href="#">Profile</a></li>
+                    <li><a href="/subscribed/subscription/courseReceipt.php.htm">Subscription</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    
+    <!-- Popup for Profile Setup -->
+    <div id="profile-setup-popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Setup Your Profile</h2>
+            <form id="profile-setup-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Full Name</label>
+                    <input type="text" id="full-name" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Upload Profile Photo</label>
+                    <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Save Profile</button>
+            </form>
+        </div>
+    </div>
+    </div>
+  </header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Mentor India</h1>
+          <h2>Mentor India Coding Program</h2>
+          <div class="d-flex">
+              </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      primary: '#3b82f6',
+                  }
+              }
+          }
+      }
+  </script>
+
+<div class="container mx-auto max-w-7xl">
+    <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">Our Courses</h1>
+    
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap justify-center mb-6 sm:mb-8">
+        <button class="filter-btn bg-primary text-white px-3 py-2 rounded-lg mr-2 mb-2 text-sm sm:text-base" data-filter="all">Show All</button>
+        <button class="filter-btn bg-gray-200 text-gray-800 px-3 py-2 rounded-lg mr-2 mb-2 text-sm sm:text-base" data-filter="web">Web Development</button>
+        <button class="filter-btn bg-gray-200 text-gray-800 px-3 py-2 rounded-lg mb-2 text-sm sm:text-base" data-filter="lang">Languages</button>
+    </div>
+
+    <!-- Course Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8" id="courseContainer">
+        <!-- Web Development Cards -->
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+            <img src="assets/img/html.webp" width="50vh" alt="HTML Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">HTML</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Learn the basics of web structure with HTML.</p>
+                <a href="Web-Dev/HTML/html.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+            <img src="assets/img/css.webp" alt="CSS Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">CSS</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Master the art of styling web pages with CSS.</p>
+                <a href="Web-Dev/CSS/css.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+            <img src="assets/img/js.webp" alt="JavaScript Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">JavaScript</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Bring interactivity to your websites with JavaScript.</p>
+                <a href="Web-Dev/Javascript/javascript.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+
+        <!-- Language Cards -->
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="lang">
+            <img src="assets/img/python.webp" alt="Python Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Python</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Learn Python programming from scratch.</p>
+                <a href="Language/Python/python.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="lang">
+            <img src="assets/img/java.webp" alt="Java Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">Java</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Master Java programming language.</p>
+                <a href="Language/Java/java.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="lang">
+            <img src="assets/img/dsa.webp" alt="DSA Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">DSA</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Learn Data Structures and Algorithms.</p>
+                <a href="Language/DSA/dsa.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="lang">
+            <img src="assets/img/c language.webp" alt="C Language Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">C Language</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Learn the fundamentals of C programming.</p>
+                <a href="Language/C/c.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+        <div class="card bg-white rounded-lg shadow-md overflow-hidden" data-category="lang">
+            <img src="assets/img/c++.webp" alt="C++ Course" class="w-full h-32 sm:h-40 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">C++</h3>
+                <p class="text-sm sm:text-base text-gray-600 mb-4">Master C++ programming language.</p>
+                <a href="Language/Cpp/cpp.php.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 text-sm sm:text-base">Explore</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br><br>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>Mentor India</h3>
+            <p>Learn it - Apply it - win the race.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mentor India</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">Mentor India(IN)</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/course.js"></script>
+
+</body>
+
+</html>

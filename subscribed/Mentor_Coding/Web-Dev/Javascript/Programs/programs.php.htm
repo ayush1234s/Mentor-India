@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mentor India</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/course.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/subscribed/js/subscribe.js"></script>
+
+  <!-- =======================================================
+  * Template Name: eNno
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+    /* Profile image styles */
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Mentor India</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="/subscribed/subscribe_course.aspx.htm">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="https://mentor-portal.netlify.app">Portals</a></li>
+            <li><a class="nav-link scrollto" href="/subscribed/Mentor_Store/mentorStore.php.htm">Mentor Store</a></li>
+            <li><a class="nav-link scrollto" href="contactus.php.htm">Contact</a></li>
+            <!-- Profile Dropdown -->
+            <li class="dropdown">
+                <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a id="profile-name" href="#">Profile</a></li>
+                    <li><a href="/subscribed/subscription/courseReceipt.php.htm">Subscription</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    
+    <!-- Popup for Profile Setup -->
+    <div id="profile-setup-popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Setup Your Profile</h2>
+            <form id="profile-setup-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Full Name</label>
+                    <input type="text" id="full-name" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Upload Profile Photo</label>
+                    <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Save Profile</button>
+            </form>
+        </div>
+    </div>
+    </div>
+  </header><!-- End Header -->
+<br><br><br><br><br>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .popup-card {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            width: 100%;
+            max-width: 595px; /* A4 width in pixels at 72dpi */
+            height: 100%;
+            max-height: 842px; /* A4 height in pixels at 72dpi */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow-y: auto;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .fullscreen {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            border-radius: 0 !important;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+        }
+    </style>
+
+<div class="container mx-auto max-w-6xl">
+    <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">Learning Resources</h1>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <!-- JavaScript Programs Card -->
+        <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg relative group cursor-pointer"
+            onclick="openPopup()">
+            <i class="fas fa-code text-3xl text-blue-500 mb-2"></i>
+            <span class="text-sm font-medium text-gray-700">JavaScript Programs</span>
+            <i class="fas fa-arrow-right absolute right-2 bottom-2 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+
+<!-- Popup Card -->
+<div class="popup-card" id="popupCard">
+    <div class="p-4 bg-gray-100 border-b flex justify-between items-center">
+        <h2 class="text-xl font-semibold">JavaScript Programs</h2>
+        <button onclick="toggleFullscreen()" class="text-gray-500 hover:text-gray-800">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(100vh-120px)]">
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">Introductory JavaScript Programs</h2>
+
+        <ol class="list-decimal list-inside text-gray-700 mb-4">
+            <li>
+                <strong>Hello World</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>console.log('Hello, world!');</code></pre>
+            </li>
+            <li>
+                <strong>Variable Declaration</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let x = 5;
+let y = 10;
+console.log(x + y);</code></pre>
+            </li>
+            <li>
+                <strong>Function Example</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>function greet(name) {
+    return 'Hello, ' + name + '!';
+}
+console.log(greet('Ayush'));</code></pre>
+            </li>
+            <li>
+                <strong>Conditional Statement</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let num = 10;
+if (num > 5) {
+    console.log('Number is greater than 5');
+} else {
+    console.log('Number is 5 or less');
+}</code></pre>
+            </li>
+            <li>
+                <strong>Loop Example</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>for (let i = 0; i < 5; i++) {
+    console.log('Iteration ' + i);
+}</code></pre>
+            </li>
+            <li>
+                <strong>Array Example</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits[1]); // Outputs: banana</code></pre>
+            </li>
+            <li>
+                <strong>Object Example</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let person = {
+    firstName: 'Ayush',
+    lastName: 'Srivastava',
+    age: 25
+};
+console.log(person.firstName); // Outputs: Ayush</code></pre>
+            </li>
+            <li>
+                <strong>String Methods</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let text = 'JavaScript';
+console.log(text.length); // Outputs: 10
+console.log(text.toUpperCase()); // Outputs: JAVASCRIPT</code></pre>
+            </li>
+            <li>
+                <strong>Array Methods</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>let numbers = [1, 2, 3, 4, 5];
+let doubled = numbers.map(function(num) {
+    return num * 2;
+});
+console.log(doubled); // Outputs: [2, 4, 6, 8, 10]</code></pre>
+            </li>
+            <li>
+                <strong>Event Handling</strong>
+                <pre class="bg-gray-200 p-4 rounded-lg overflow-x-auto text-sm text-gray-700"><code>document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+});</code></pre>
+            </li>
+        </ol>
+
+        <div class="text-center mt-4">
+            <button onclick="downloadPDF()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Download PDF
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to open the popup
+    function openPopup() {
+        document.getElementById('popupCard').style.display = 'block';
+        document.getElementById('popupOverlay').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('popupCard').style.display = 'none';
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+
+    // Function to toggle fullscreen mode
+    function toggleFullscreen() {
+        const popupCard = document.getElementById('popupCard');
+        popupCard.classList.toggle('fullscreen');
+        const icon = popupCard.querySelector('button i');
+        if (popupCard.classList.contains('fullscreen')) {
+            icon.classList.remove('fa-expand');
+            icon.classList.add('fa-compress');
+        } else {
+            icon.classList.remove('fa-compress');
+            icon.classList.add('fa-expand');
+        }
+    }
+
+    // Function to download programs as PDF
+    async function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Add custom header
+        doc.setFontSize(22);
+        doc.text('Mentor India', 10, 10);
+        
+        // Title
+        doc.setFontSize(18);
+        doc.text('JavaScript Programs', 10, 20);
+        
+        // Add content
+        doc.setFontSize(16);
+        doc.text('1. Hello World\n\nconsole.log("Hello, world!");\n\n', 10, 30);
+        doc.text('2. Variable Declaration\n\nlet x = 5;\nlet y = 10;\nconsole.log(x + y);\n\n', 10, 50);
+        doc.text('3. Function Example\n\nfunction greet(name) {\n  return "Hello, " + name + "!";\n}\nconsole.log(greet("Ayush"));\n\n', 10, 70);
+        doc.text('4. Conditional Statement\n\nlet num = 10;\nif (num > 5) {\n  console.log("Number is greater than 5");\n} else {\n  console.log("Number is 5 or less");\n}\n\n', 10, 90);
+        doc.text('5. Loop Example\n\nfor (let i = 0; i < 5; i++) {\n  console.log("Iteration " + i);\n}\n\n', 10, 110);
+        doc.text('6. Array Example\n\nlet fruits = ["apple", "banana", "cherry"];\nconsole.log(fruits[1]); // Outputs: banana\n\n', 10, 130);
+        doc.text('7. Object Example\n\nlet person = {\n  firstName: "Ayush",\n  lastName: "Srivastava",\n  age: 25\n};\nconsole.log(person.firstName); // Outputs: Ayush\n\n', 10, 150);
+        doc.text('8. String Methods\n\nlet text = "JavaScript";\nconsole.log(text.length); // Outputs: 10\nconsole.log(text.toUpperCase()); // Outputs: JAVASCRIPT\n\n', 10, 170);
+        doc.text('9. Array Methods\n\nlet numbers = [1, 2, 3, 4, 5];\nlet doubled = numbers.map(function(num) {\n  return num * 2;\n});\nconsole.log(doubled); // Outputs: [2, 4, 6, 8, 10]\n\n', 10, 190);
+        doc.text('10. Event Handling\n\ndocument.getElementById("myButton").addEventListener("click", function() {\n  alert("Button clicked!");\n});\n\n', 10, 210);
+        
+        // Add custom footer
+        doc.setFontSize(14);
+        doc.text('Admin - Ayush Srivastava', 10, doc.internal.pageSize.height - 10);
+
+        doc.save('JavaScript_Programs.pdf');
+    }
+</script>
+
+<br><br><br>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>Mentor India</h3>
+            <p>Learn it - Apply it - win the race.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mentor India</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">Mentor India(IN)</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/course.js"></script>
+
+</body>
+
+</html>

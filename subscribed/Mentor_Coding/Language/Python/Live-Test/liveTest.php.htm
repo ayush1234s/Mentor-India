@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mentor India</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/course.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/subscribed/js/subscribe.js"></script>
+
+  <!-- =======================================================
+  * Template Name: eNno
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+    /* Profile image styles */
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Mentor India</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="/subscribed/subscribe_course.aspx.htm">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="https://mentor-portal.netlify.app">Portals</a></li>
+            <li><a class="nav-link scrollto" href="/subscribed/Mentor_Store/mentorStore.php.htm">Mentor Store</a></li>
+            <li><a class="nav-link scrollto" href="contactus.php.htm">Contact</a></li>
+            <!-- Profile Dropdown -->
+            <li class="dropdown">
+                <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a id="profile-name" href="#">Profile</a></li>
+                    <li><a href="/subscribed/subscription/courseReceipt.php.htm">Subscription</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    
+    <!-- Popup for Profile Setup -->
+    <div id="profile-setup-popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Setup Your Profile</h2>
+            <form id="profile-setup-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Full Name</label>
+                    <input type="text" id="full-name" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Upload Profile Photo</label>
+                    <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Save Profile</button>
+            </form>
+        </div>
+    </div>
+    </div>
+  </header><!-- End Header -->
+<br><br><br><br><br>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<div id="app" class="container mx-auto p-4">
+    <!-- Login Page -->
+    <div id="loginPage" class="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto">
+        <h1 class="text-2xl font-bold mb-6 text-center">HTML Live Test Login</h1>
+        <form id="loginForm">
+            <div class="mb-4">
+                <label for="mentorId" class="block text-gray-700 text-sm font-bold mb-2">Mentor ID</label>
+                <input type="text" id="mentorId" name="mentorId" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Sign In
+                </button>
+            </div>
+        </form>
+        <p id="loginError" class="text-red-500 text-xs italic mt-4 hidden">Invalid credentials. Please try again.</p>
+    </div>
+
+    <!-- Test Page -->
+    <div id="testPage" class="hidden">
+        <div class="flex flex-col md:flex-row gap-4">
+            <!-- Left side: Question and Navigation -->
+            <div class="w-full md:w-2/3 bg-white rounded-lg shadow-md p-6">
+                <h2 id="questionNumber" class="text-xl font-bold mb-4">Question 1</h2>
+                <p id="questionText" class="mb-4"></p>
+                <div id="options" class="space-y-2 mb-4"></div>
+                <div class="flex justify-between items-center">
+                    <button id="saveNext" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Save & Next</button>
+                    <button id="next" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Next</button>
+                    <button id="markReview" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Mark for Review</button>
+                </div>
+                <div id="timer" class="mt-4 text-center text-xl font-bold"></div>
+            </div>
+            
+            <!-- Right side: Question Panel -->
+            <div class="w-full md:w-1/3 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-bold mb-4">Question Panel</h3>
+                <div id="questionPanel" class="grid grid-cols-5 gap-2"></div>
+                <button id="submit" class="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full hidden">Submit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Page -->
+    <div id="resultPage" class="hidden bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">Test Results</h2>
+        <div class="mb-4">
+            <p><strong>Total Marks:</strong> 40</p>
+            <p><strong>Obtained Marks:</strong> <span id="obtainedMarks"></span></p>
+            <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
+            <p><strong>Grade:</strong> <span id="grade"></span></p>
+        </div>
+        <div class="mt-8 text-right">
+            <p><strong>Signature:</strong> Ayush Srivastava</p>
+            <p><em>Admin</em></p>
+        </div>
+    </div>
+</div>
+
+<script src="test.js">
+   
+</script>
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>Mentor India</h3>
+            <p>Learn it - Apply it - win the race.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mentor India</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">Mentor India(IN)</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/course.js"></script>
+
+</body>
+
+</html>

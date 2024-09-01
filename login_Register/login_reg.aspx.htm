@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <style>
+        .strength-bar {
+            height: 5px;
+            width: 100%;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        .strength-weak { background-color: red; }
+        .strength-good { background-color: yellow; }
+        .strength-strong { background-color: green; }
+        .password-input-wrapper {
+            position: relative;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-purple-700 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
+        <div class="flex flex-col md:flex-row">
+            <!-- Left Panel -->
+            <div id="leftPanel" class="bg-purple-600 text-white p-8 flex flex-col justify-center items-center md:w-1/2">
+                <i id="panelIcon" class="fas fa-user-circle text-6xl mb-4"></i>
+                <h2 id="panelTitle" class="text-2xl font-bold mb-2">Welcome Back to Mentor India</h2>
+                <p id="panelText">Sign in to continue your learning journey</p>
+            </div>
+
+            <!-- Right Panel (Forms) -->
+            <div class="md:w-1/2 p-8">
+                <!-- Tabs -->
+                <div class="flex mb-4">
+                    <button id="signinTab" class="flex-1 py-2 px-4 bg-purple-600 text-white rounded-tl-lg rounded-tr-lg">Sign In</button>
+                    <button id="signupTab" class="flex-1 py-2 px-4 bg-gray-200 text-gray-700 rounded-tl-lg rounded-tr-lg">Sign Up</button>
+                </div>
+
+                <!-- Sign In Form -->
+                <div id="signinForm">
+                    <form id="login-form">
+                        <div class="mb-4">
+                            <label for="login-email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="login-email" class="w-full p-3 border border-gray-300 rounded" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="login-password" class="block text-gray-700 font-medium mb-2">Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="login-password" class="w-full p-3 border border-gray-300 rounded" placeholder="Enter your password" required>
+                                <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('login-password', this)"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4 flex items-center">
+                            <input type="checkbox" id="remember-me" class="mr-2">
+                            <label for="remember-me" class="text-gray-700">Remember me</label>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <a href="#" id="forgot-password" class="text-sm text-purple-700 hover:underline">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-700 text-white p-3 rounded hover:bg-purple-900">Sign In</button>
+                    </form>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div id="signupForm" class="hidden">
+                    <form id="signup-form">
+                        <div class="mb-4">
+                            <label for="signup-name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="signup-name" name="name" class="w-full p-3 border border-gray-300 rounded" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="signup-email" name="email" class="w-full p-3 border border-gray-300 rounded" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-password" class="block text-gray-700 font-medium mb-2">Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="signup-password" name="password" class="w-full p-3 border border-gray-300 rounded" placeholder="Enter your password" required>
+                                <i class="password-toggle fas fa-eye-slash" onclick="togglePasswordVisibility('signup-password', this)"></i>
+                            </div>
+                            <div id="password-strength" class="mt-2">
+                                <div id="strength-bar" class="strength-bar"></div>
+                                <p id="strength-text" class="text-sm mt-1"></p>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-700 text-white p-3 rounded hover:bg-purple-900">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popups -->
+    <div id="forgotPasswordPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">Forgot Password</h3>
+            <input type="email" id="forgot-password-email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Enter your email">
+            <button id="submit-forgot-password" class="w-full bg-purple-700 text-white p-3 rounded hover:bg-purple-900">Submit</button>
+        </div>
+    </div>
+
+    <div id="successPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg">
+            <h3 id="successMessage" class="text-xl font-semibold text-center"></h3>
+        </div>
+    </div>
+
+    <div id="errorPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg">
+            <h3 id="errorMessage" class="text-xl font-semibold text-center text-red-600"></h3>
+        </div>
+    </div>
+
+    <script>
+        // Allowed user names
+        const allowedNames = ["Ayush Srivastava", "Shraddha Kushwaha", "Kunal Kumar", "Puja Gautam", "Tania Srivastava", "Jiya Srivastava", "Tanisha Nigam", "Abhishek Yadav"];
+
+        // Elements
+        const signinTab = document.getElementById('signinTab');
+        const signupTab = document.getElementById('signupTab');
+        const signinForm = document.getElementById('signinForm');
+        const signupForm = document.getElementById('signupForm');
+        const leftPanel = document.getElementById('leftPanel');
+        const panelIcon = document.getElementById('panelIcon');
+        const panelTitle = document.getElementById('panelTitle');
+        const panelText = document.getElementById('panelText');
+        const forgotPasswordLink = document.getElementById('forgot-password');
+        const forgotPasswordPopup = document.getElementById('forgotPasswordPopup');
+        const successPopup = document.getElementById('successPopup');
+        const errorPopup = document.getElementById('errorPopup');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const passwordInput = document.getElementById('signup-password');
+        const strengthBar = document.getElementById('strength-bar');
+        const strengthText = document.getElementById('strength-text');
+        const rememberMeCheckbox = document.getElementById('remember-me');
+        const loginEmailInput = document.getElementById('login-email');
+
+        // Toggle Forms
+        signinTab.addEventListener('click', function() {
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            signinTab.classList.add('bg-purple-600', 'text-white');
+            signinTab.classList.remove('bg-gray-200', 'text-gray-700');
+            signupTab.classList.add('bg-gray-200', 'text-gray-700');
+            signupTab.classList.remove('bg-purple-600', 'text-white');
+            updateLeftPanel('signin');
+        });
+
+        signupTab.addEventListener('click', function() {
+            signupForm.classList.remove('hidden');
+            signinForm.classList.add('hidden');
+            signupTab.classList.add('bg-purple-600', 'text-white');
+            signupTab.classList.remove('bg-gray-200', 'text-gray-700');
+            signinTab.classList.add('bg-gray-200', 'text-gray-700');
+            signinTab.classList.remove('bg-purple-600', 'text-white');
+            updateLeftPanel('signup');
+        });
+
+        function updateLeftPanel(type) {
+            if (type === 'signin') {
+                panelIcon.className = 'fas fa-user-circle text-6xl mb-4';
+                panelTitle.textContent = 'Welcome Back to Mentor India';
+                panelText.textContent = 'Sign in to continue your learning journey';
+            } else {
+                panelIcon.className = 'fas fa-user-plus text-6xl mb-4';
+                panelTitle.textContent = 'Welcome to Mentor India';
+                panelText.textContent = 'Create your free account and start learning';
+            }
+        }
+
+        // Handle Signup
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            if (allowedNames.includes(name)) {
+                localStorage.setItem(email, JSON.stringify({ name, password }));
+                showSuccessPopup(`Signup successful! Welcome, ${name}`);
+                setTimeout(() => {
+                    window.location.href = '/subscribed/subscribe_course.aspx.htm';
+                }, 2000);
+            } else {
+                localStorage.setItem(email, JSON.stringify({ name, password }));
+                showSuccessPopup(`Signup successful! Welcome, ${name}`);
+                setTimeout(() => {
+                    window.location.href = '/unsubscribe/unsubscribe_course.aspx.htm';
+                }, 2000);
+            }
+        });
+
+        // Handle Login
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const user = JSON.parse(localStorage.getItem(email));
+
+            if (user && user.password === password) {
+                if (rememberMeCheckbox.checked) {
+                    localStorage.setItem('rememberedEmail', email);
+                } else {
+                    localStorage.removeItem('rememberedEmail');
+                }
+                showSuccessPopup(`Welcome back, ${user.name}!`);
+                setTimeout(() => {
+                    window.location.href = '/subscribed/subscribe_course.aspx.htm';
+                }, 2000);
+            } else {
+                showErrorPopup('Invalid email or password');
+            }
+        });
+
+        // Handle Forgot Password
+        forgotPasswordLink.addEventListener('click', function() {
+            forgotPasswordPopup.classList.remove('hidden');
+        });
+
+        document.getElementById('submit-forgot-password').addEventListener('click', function() {
+            const email = document.getElementById('forgot-password-email').value;
+            const user = JSON.parse(localStorage.getItem(email));
+
+            if (user) {
+                alert(`Your password is: ${user.password}`);
+            } else {
+                alert('Email not found.');
+            }
+            forgotPasswordPopup.classList.add('hidden');
+        });
+
+        // Show Success Popup
+        function showSuccessPopup(message) {
+            successMessage.textContent = message;
+            successPopup.classList.remove('hidden');
+            setTimeout(() => {
+                successPopup.classList.add('hidden');
+            }, 2000);
+        }
+
+        // Show Error Popup
+        function showErrorPopup(message) {
+            errorMessage.textContent = message;
+            errorPopup.classList.remove('hidden');
+            setTimeout(() => {
+                errorPopup.classList.add('hidden');
+            }, 2000);
+        }
+
+        // Password Strength Indicator
+        passwordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const strength = getPasswordStrength(password);
+
+            strengthBar.style.width = `${strength.percent}%`;
+            strengthBar.className = `strength-bar ${strength.color}`;
+            strengthText.textContent = strength.message;
+        });
+
+        function getPasswordStrength(password) {
+            let strength = {
+                percent: 0,
+                color: 'strength-weak',
+                message: 'Weak',
+            };
+
+            if (password.length >= 8) {
+                strength.percent = 50;
+                strength.color = 'strength-good';
+                strength.message = 'Good';
+
+                if (/[A-Z]/.test(password) && /[0-9]/.test(password)) {
+                    strength.percent = 100;
+                    strength.color = 'strength-strong';
+                    strength.message = 'Strong';
+                }
+            }
+
+            return strength;
+        }
+
+        // Toggle password visibility
+        function togglePasswordVisibility(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+
+        // Remember Me functionality
+        window.addEventListener('load', function() {
+            const rememberedEmail = localStorage.getItem('rememberedEmail');
+            if (rememberedEmail) {
+                loginEmailInput.value = rememberedEmail;
+                rememberMeCheckbox.checked = true;
+            }
+        });
+    </script>
+</body>
+</html>

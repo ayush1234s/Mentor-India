@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mentor India</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/course.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/subscribed/js/subscribe.js"></script>
+
+  <!-- =======================================================
+  * Template Name: eNno
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+    /* Profile image styles */
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Mentor India</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="/subscribed/subscribe_course.aspx.htm">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="portals.html">Portals</a></li>
+            <li><a class="nav-link scrollto" href="Mentor_Store/mentorStore.php.htm">Mentor Store</a></li>
+            <li><a class="nav-link scrollto" href="contactus.php.htm">Contact</a></li>
+            <!-- Profile Dropdown -->
+            <li class="dropdown">
+                <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a id="profile-name" href="#">Profile</a></li>
+                    <li><a href="/subscribed/subscription/courseReceipt.php.htm">Subscription</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    
+    <!-- Popup for Profile Setup -->
+    <div id="profile-setup-popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Setup Your Profile</h2>
+            <form id="profile-setup-form">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Full Name</label>
+                    <input type="text" id="full-name" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Upload Profile Photo</label>
+                    <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Save Profile</button>
+            </form>
+        </div>
+    </div>
+    </div>
+  </header><!-- End Header -->
+<br><br><br><br><br><br>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <div id="app" class="container mx-auto p-4">
+        <div id="verificationForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">User Verification</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="photo">
+                    Upload Photo
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="photo" type="file" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Candidate Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Full Name">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                    Date of Birth
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dob" type="date">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                    Gender
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    Purchased Course
+                </label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox" name="courses" value="Mentor India Coding Program">
+                        <span class="ml-2">Mentor India Coding Program</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox" name="courses" value="Mentor India Examination Test Series">
+                        <span class="ml-2">Mentor India Examination Test Series</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox" name="courses" value="College Assests">
+                        <span class="ml-2">College Assests</span>
+                    </label>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <button id="verifyBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    Verify
+                </button>
+                <button id="generateBtn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" disabled>
+                    Generate Receipt
+                </button>
+            </div>
+            <div id="verificationStatus" class="mt-4 text-center hidden">
+                <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                    Verification Successful
+                </span>
+                <p class="text-sm text-gray-600">User data matched! Now Generate your subscription receipt</p>
+            </div>
+        </div>
+
+        <div id="receipt" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-2xl mx-auto hidden">
+            <h2 class="text-2xl font-bold mb-4 text-center">Mentor India</h2>
+            <div class="flex flex-col items-center mb-4">
+                <img id="receiptPhoto" class="w-32 h-32 rounded-full mb-4" src="" alt="Candidate Photo">
+                <div class="text-center">
+                    <p class="mb-2"><strong>Candidate Name:</strong> <span id="receiptName"></span></p>
+                    <p class="mb-2"><strong>Mentor ID:</strong> <span id="receiptMentorId"></span></p>
+                    <p class="mb-2"><strong>Date of Birth:</strong> <span id="receiptDob"></span></p>
+                    <p class="mb-2"><strong>Gender:</strong> <span id="receiptGender"></span></p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="font-bold">Purchased Course(s):</p>
+                <ul id="receiptCourses" class="list-disc list-inside"></ul>
+            </div>
+            <p class="mb-4"><strong>Total Price:</strong> ₹<span id="receiptTotalPrice"></span></p>
+            <div class="mb-4 flex justify-center">
+                <svg id="barcode"></svg>
+            </div>
+            <div class="flex justify-between items-end mb-4">
+                <img src="assets/Stamp%20Signature.png" alt="Mentor India Stamp" class="w-24">
+                <img src="assets/Signature.png" alt="Admin Signature" class="w-24">
+            </div>
+            <div id="downloadTimeTable" class="mt-4 hidden no-print">
+                <button id="downloadBtn" class="flex items-center text-blue-600 hover:underline">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    Download Time Table for Mentor India Coding Program
+                </button>
+            </div>
+            <button id="printBtn" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-print">
+                Print Receipt
+            </button>
+        </div>
+    </div>
+
+    <div id="downloadPopup" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Downloading Time Table</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500">
+                        Download progress: <span id="downloadProgress">0</span>%
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="closePopup" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('verificationForm');
+            const receipt = document.getElementById('receipt');
+            const verifyBtn = document.getElementById('verifyBtn');
+            const generateBtn = document.getElementById('generateBtn');
+            const verificationStatus = document.getElementById('verificationStatus');
+            const printBtn = document.getElementById('printBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const downloadPopup = document.getElementById('downloadPopup');
+            const closePopup = document.getElementById('closePopup');
+            const progressBar = document.getElementById('progressBar');
+            const downloadProgress = document.getElementById('downloadProgress');
+
+            let formData = {};
+            let mentorId = '';
+
+            // Check if receipt data exists in local storage
+            const storedReceipt = localStorage.getItem('receiptData');
+            if (storedReceipt) {
+                formData = JSON.parse(storedReceipt);
+                showReceipt();
+            }
+
+            verifyBtn.addEventListener('click', handleVerify);
+            generateBtn.addEventListener('click', handleGenerateReceipt);
+            printBtn.addEventListener('click', handlePrint);
+            downloadBtn.addEventListener('click', handleDownload);
+            closePopup.addEventListener('click', () => downloadPopup.classList.add('hidden'));
+
+            function handleVerify() {
+                verifyBtn.disabled = true;
+                verifyBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Verifying...';
+                
+                setTimeout(() => {
+                    verifyBtn.disabled = false;
+                    verifyBtn.textContent = 'Verify';
+                    verificationStatus.classList.remove('hidden');
+                    generateBtn.disabled = false;
+                    
+                    // Disable all inputs
+                    document.querySelectorAll('input, select').forEach(input => input.disabled = true);
+                }, 1500);
+            }
+
+            function handleGenerateReceipt() {
+                formData = {
+                    photo: document.getElementById('photo').files[0],
+                    name: document.getElementById('name').value,
+                    dob: document.getElementById('dob').value,
+                    gender: document.getElementById('gender').value,
+                    courses: Array.from(document.querySelectorAll('input[name="courses"]:checked')).map(checkbox => checkbox.value)
+                };
+
+                mentorId = generateMentorId();
+                formData.mentorId = mentorId;
+
+                localStorage.setItem('receiptData', JSON.stringify(formData));
+                showReceipt();
+            }
+
+            function showReceipt() {
+                form.classList.add('hidden');
+                receipt.classList.remove('hidden');
+
+                document.getElementById('receiptName').textContent = formData.name;
+                document.getElementById('receiptMentorId').textContent = formData.mentorId;
+                document.getElementById('receiptDob').textContent = formData.dob;
+                document.getElementById('receiptGender').textContent = formData.gender;
+
+                const coursesList = document.getElementById('receiptCourses');
+                coursesList.innerHTML = '';
+                formData.courses.forEach(course => {
+                    const li = document.createElement('li');
+                    li.textContent = course;
+                    coursesList.appendChild(li);
+                });
+
+                document.getElementById('receiptTotalPrice').textContent = calculateTotalPrice();
+
+                if (formData.courses.includes('Mentor India Coding Program')) {
+                    document.getElementById('downloadTimeTable').classList.remove('hidden');
+                }
+
+                // Generate barcode
+                JsBarcode("#barcode", formData.mentorId, {
+                    format: "CODE39",
+                    width: 1,
+                    height: 50,
+                    displayValue: true
+                });
+
+                // Display uploaded photo
+                if (formData.photo instanceof File) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('receiptPhoto').src = e.target.result;
+                    }
+                    reader.readAsDataURL(formData.photo);
+                } else if (typeof formData.photo === 'string') {
+                    document.getElementById('receiptPhoto').src = formData.photo;
+                }
+            }
+
+            function generateMentorId() {
+                return 'MLT' + Math.floor(100000 + Math.random() * 900000);
+            }
+
+            function calculateTotalPrice() {
+                const prices = {
+                    'Mentor India Coding Program': 699.3,
+                    'Mentor India Examination Test Series': 170,
+                    'College Assests': 150
+                };
+                return formData.courses.reduce((total, course) => total + prices[course], 0).toFixed(2);
+            }
+
+            function handlePrint() {
+                window.print();
+            }
+
+            function handleDownload() {
+                downloadPopup.classList.remove('hidden');
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 1;
+                    progressBar.style.width = `${progress}%`;
+                    downloadProgress.textContent = progress;
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            downloadPopup.classList.add('hidden');
+                            // Trigger the actual download
+                            const link = document.createElement('a');
+                            link.href = 'path/to/your/timetable.pdf';
+                            link.download = 'Mentor_India_Coding_Program_Timetable.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }, 500);
+                    }
+                }, 50);
+            }
+        });
+    </script>
+
+
+
+
+<br><br>
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>Mentor India</h3>
+            <p>Learn it - Apply it - win the race.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mentor India</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">Mentor India(IN)</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/course.js"></script>
+
+</body>
+
+</html>
