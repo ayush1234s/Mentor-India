@@ -255,25 +255,59 @@
   </div>
 
   <!-- Payment Form Modal -->
-  <div id="paymentFormModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-      <div class="bg-white p-6 rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
-          <h3 class="text-xl font-semibold mb-4">Payment Form</h3>
-          <form id="paymentForm">
-              <div class="mb-4">
-                  <label for="upi" class="block mb-1">Enter UPI Number/Address:</label>
-                  <input type="text" id="upi" required class="w-full p-2 border rounded">
-              </div>
-              <button type="button" id="showQrButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full mb-4">Show QR</button>
-              <div id="qrCodeContainer" class="mb-4 hidden">
-                  <h4 class="font-semibold mb-2">Scan QR Code to Pay</h4>
-                  <div id="qrCode" class="mx-auto"><img src="assets/qr code.png" width="80vh"></div>
-                  <p id="transactionSuccess" class="text-green-500 font-semibold mt-4 hidden">Your transaction has been successful</p>
-              </div>
-              <button type="button" id="printReceipt" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full mb-2 hidden">Print Receipt</button>
-              <button type="submit" id="submitPayment" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full hidden">Submit</button>
-          </form>
-      </div>
-  </div>
+<div id="paymentFormModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold"> <small><small>Scan and pay with any BHIM UPI app</small></small> </h3>
+            <div class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+                Time left: <span id="timer">10:00</span>
+            </div>
+        </div><hr><br>
+        <form id="paymentForm">
+          <center><img src="assets/UPI.png" width="300vh" alt=""></center>
+          
+            <div class="mb-4">
+                <label for="upi" class="block mb-1">Enter UPI Number/Address:</label>
+                <input type="text" id="upi" required class="w-full p-2 border rounded">
+            </div>
+            <button type="button" id="showQrButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full mb-4">Show QR</button>
+            <div id="qrCodeContainer" class="mb-4 hidden">
+                <h4 class="font-semibold mb-2">Scan QR Code to Pay</h4>
+                <div id="qrCode" class="mx-auto"><img src="assets/qr code.png" width="80vh"></div>
+                <p id="transactionSuccess" class="text-green-500 font-semibold mt-4 hidden">Your transaction has been successful</p>
+            </div>
+            <button type="button" id="printReceipt" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full mb-2 hidden">Print Receipt</button>
+            <button type="submit" id="submitPayment" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full hidden">Submit</button>
+        </form>
+    </div>
+</div>
+<script>
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+        let interval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                clearInterval(interval);
+                display.textContent = "00:00";
+                // You can add additional actions here when the timer reaches zero
+                // For example, close the modal or disable the form
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        let tenMinutes = 60 * 10,
+            display = document.querySelector('#timer');
+        startTimer(tenMinutes, display);
+    };
+</script>
 
   <!-- Coupon Popup -->
   <div id="couponPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">

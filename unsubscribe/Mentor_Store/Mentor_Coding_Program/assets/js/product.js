@@ -58,7 +58,7 @@ document.getElementById('showQrButton').addEventListener('click', function() {
             document.getElementById('transactionSuccess').classList.remove('hidden');
             document.getElementById('printReceipt').classList.remove('hidden');
             document.getElementById('submitPayment').classList.remove('hidden');
-        }, 15000);
+        }, 35000);
     } else {
         alert('Please enter a UPI address');
     }
