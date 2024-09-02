@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,6 +27,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/course.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/unsubscribe/js/subscribe.js"></script>
 
   <!-- =======================================================
   * Template Name: eNno
@@ -35,7 +38,17 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
+<style>
+    /* Profile image styles */
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
 <body>
 
   <!-- ======= Header ======= -->
@@ -48,7 +61,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a class="nav-link scrollto active" href="subscribe_course.aspx.htm">Home</a></li>
+            <li><a class="nav-link scrollto active" href="/unsubscribe/unsubscribe_course.aspx.htm">Home</a></li>
             <li><a class="nav-link scrollto" href="/#about">About</a></li>
             <li><a class="nav-link scrollto" href="https://mentor-portal.netlify.app">Portals</a></li>
             <li><a class="nav-link scrollto" href="Mentor_Store/mentorStore.php.htm">Mentor Store</a></li>
@@ -84,80 +97,70 @@
     </div>
     </div>
   </header><!-- End Header -->
+  <br><br><br><br>
 
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg border border-gray-300">
+      <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">Refund Policy</h1>
 
- <!-- ======= Contact Section ======= -->
- <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <span>Contact</span>
-        <h2>Contact</h2>
-        <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+      <div class="mb-4">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">Mentor India Coding Program Refund Policy</h2>
+          <p class="text-gray-600 leading-relaxed">
+              At Mentor India, we strive to provide our students with the best learning experience possible. We understand that sometimes unforeseen circumstances may require a student to request a refund for a course they have purchased. Our refund policy is designed to be fair and transparent, ensuring that all our students are treated equitably.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+              Please read the following terms carefully to understand the conditions under which you may be eligible for a refund.
+          </p>
       </div>
 
-      <div class="row">
-
-        <div class="col-lg-5 d-flex align-items-stretch">
-          <div class="info">
-            <div class="address">
-              <i class="bi bi-geo-alt"></i>
-              <h4>Location:</h4>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
-
-            <div class="email">
-              <i class="bi bi-envelope"></i>
-              <h4>Email:</h4>
-              <p>info@example.com</p>
-            </div>
-
-            <div class="phone">
-              <i class="bi bi-phone"></i>
-              <h4>Call:</h4>
-              <p>+1 5589 55488 55s</p>
-            </div>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-          </div>
-
-        </div>
-
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required>
-              </div>
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required>
-            </div>
-            <div class="form-group mt-3">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
+      <div class="mb-4">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">Refund Policy Details</h2>
+          <ul class="list-disc pl-5 text-gray-600">
+              <li>If you apply for a refund on the same day of purchase, the full amount will be refunded.</li>
+              <li>If you apply for a refund the next day, the refund amount will be processed after deducting 20% of the purchase price.</li>
+              <li>If you apply for a refund after the next day, 50% of the purchase amount will be deducted, and the remaining 50% will be refunded.</li>
+              <li>If you apply for a refund after the third day, no refund will be provided.</li>
+          </ul>
+          <p class="text-red-500 font-semibold mt-2">
+              Note: If you purchase within 12 hours, the same-day refund applies. If you request a refund at 10 PM and the 12-hour window is not complete, the refund day starts from the next day, which means you receive the full amount if you apply the next day.
+          </p>
       </div>
 
-    </div>
-  </section><!-- End Contact Section -->
+      <div class="mb-4">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">How to Apply for a Refund</h2>
+          <p class="text-gray-600 leading-relaxed">
+              If you wish to request a refund for a purchased course, follow these steps:
+          </p>
+          <ul class="list-decimal pl-5 text-gray-600 mt-2">
+              <li>Go to your subscription course receipt.</li>
+              <li>At the end of the receipt, click on the "Refund Amount" button.</li>
+              <li>Fill out the refund form with the following details:
+                  <ul class="list-disc pl-10 mt-2">
+                      <li>Account Holder Name</li>
+                      <li>Account Number</li>
+                      <li>IFSC Code</li>
+                      <li>Branch</li>
+                      <li>Purchased Courses</li>
+                      <li>Purchased Course Date</li>
+                      <li>Amount to be Refunded (shown after selecting course and dates)</li>
+                      <li>Upload Signature (PNG format up to 50kb)</li>
+                  </ul>
+              </li>
+              <li>Submit the form by clicking on the "Apply" button.</li>
+              <li>Your refund will be processed within 48 to 72 hours and credited to your bank account.</li>
+          </ul>
+      </div>
 
+      <div class="mt-6">
+          <p class="text-gray-600 text-center">
+              If you do not receive the refund in your bank account within the specified time, please contact Mentor India through our <a href="#" class="text-blue-500 underline">Contact Page</a>.
+          </p>
+      </div>
+  </div>
+
+
+  <br><br><br>
    <!-- ======= Footer ======= -->
    <footer id="footer">
 

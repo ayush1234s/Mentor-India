@@ -17,8 +17,8 @@ const filterCards = (e) => {
 
 filterButtons.forEach(button => button.addEventListener("click", filterCards));
 
-function btniit() {
-    window.location.href="Courses/iitjee.html";
+function locked() {
+    window.location.href="/login_Register/login_reg.aspx.htm";
 }
 function btncoding() {
     window.location.href="Courses/coding.html";

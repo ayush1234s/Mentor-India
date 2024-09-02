@@ -18,13 +18,13 @@ const filterCards = (e) => {
 filterButtons.forEach(button => button.addEventListener("click", filterCards));
 
 function btniit() {
-    window.location.href="Courses/iitjee.html";
+    window.location.href="/subscribed/IITJEE/iitJEE.php.htm";
 }
 function btncoding() {
     window.location.href="/subscribed/Mentor_Coding/codingCourses.aspx.htm";
 }
 function btntestSeries() {
-    window.location.href="Courses/testSeries.html";
+    window.location.href="/subscribed/Test_Series/testSeries.php.htm";
 }
 
 function btncollegeAssests() {

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - IIT JEE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4 text-white relative overflow-hidden">
+    <div id="particles" class="absolute inset-0"></div>
+    
+    <div class="max-w-4xl w-full space-y-8 z-10">
+        <div class="text-center">
+            <img src="/assets/img/favicon.png" alt="Mentor India Logo" class="mx-auto h-24 w-auto mb-6 float">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">IIT JEE</h1>
+            <p class="text-xl sm:text-2xl mb-8">Prepare for success with our comprehensive JEE Course. Coming soon!</p>
+        </div>
+
+        <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            <div class="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur-sm">
+                <span id="days" class="text-4xl md:text-5xl font-bold block"></span>
+                <span class="text-sm uppercase tracking-wide">Days</span>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur-sm">
+                <span id="hours" class="text-4xl md:text-5xl font-bold block"></span>
+                <span class="text-sm uppercase tracking-wide">Hours</span>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur-sm">
+                <span id="minutes" class="text-4xl md:text-5xl font-bold block"></span>
+                <span class="text-sm uppercase tracking-wide">Minutes</span>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur-sm">
+                <span id="seconds" class="text-4xl md:text-5xl font-bold block"></span>
+                <span class="text-sm uppercase tracking-wide">Seconds</span>
+            </div>
+        </div>
+
+        <form id="subscribe-form" class="max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <input type="email" id="email" placeholder="Enter your email" class="flex-grow px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                    Notify Me
+                </button>
+            </div>
+        </form>
+
+        <div class="flex justify-center space-x-6 mt-8">
+            <a href="#" class="text-white hover:text-purple-200 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="text-white hover:text-purple-200 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="text-white hover:text-purple-200 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Particle background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 4 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Countdown timer
+        let countdownDate;
+
+        function initCountdown() {
+            const savedCountdown = localStorage.getItem('countdownDate');
+            if (savedCountdown) {
+                countdownDate = new Date(parseInt(savedCountdown));
+            } else {
+                countdownDate = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000);
+                localStorage.setItem('countdownDate', countdownDate.getTime().toString());
+            }
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<p class='text-2xl font-bold'>The wait is over!</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // Update localStorage every minute to ensure persistence
+            if (seconds === 0) {
+                localStorage.setItem('countdownDate', countdownDate.getTime().toString());
+            }
+        }
+
+        // Email subscription
+        document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            // Here you would typically send this email to your server or email service
+            console.log('Subscribed email:', email);
+            alert('Thank you for subscribing!');
+            document.getElementById('email').value = '';
+        });
+
+        // Initialize
+        createParticles();
+        initCountdown();
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>
