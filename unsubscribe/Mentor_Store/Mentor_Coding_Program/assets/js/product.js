@@ -1,4 +1,4 @@
-let originalPrice = 999;
+let originalPrice = 1356.93;
 let discountedPrice = originalPrice;
 let appliedCoupon = '';
 
@@ -17,8 +17,8 @@ document.getElementById('closeCouponPopup').addEventListener('click', function()
 
 document.getElementById('applyCoupon').addEventListener('click', function() {
     const coupon = document.getElementById('couponInput').value;
-    if (coupon === 'MINCP30') {
-        discountedPrice = originalPrice * 0.7;
+    if (coupon === 'MINCP50') {
+        discountedPrice = originalPrice * 0.59;
         appliedCoupon = coupon;
         document.getElementById('discountedPrice').classList.remove('hidden');
         document.getElementById('discountedPrice').querySelector('span').textContent = `₹${discountedPrice}`;

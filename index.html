@@ -327,6 +327,22 @@ defer>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/course.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Delay before redirection (in milliseconds)
+        const redirectDelay = 2000; // 2000 milliseconds = 2 seconds
+
+        // Check for any data stored by the login/register page
+        const storedData = localStorage.getItem('mentorindiaLoginRegisterData'); // Replace with the actual key(s) used by the login/register page
+
+        // If data exists, redirect
+        if (storedData) {
+            setTimeout(function () {
+                window.location.href = '/subscribed/subscribe_course.aspx.htm';
+            }, redirectDelay);
+        }
+    });
+</script>
 
 </body>
 
