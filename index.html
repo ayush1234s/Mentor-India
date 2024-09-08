@@ -119,7 +119,7 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="78684" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
             <p>Students  </p>
           </div>
 
@@ -267,6 +267,34 @@ chatbotId="8EBHl_OtJe9McERgH-Mxa"
 domain="www.chatbase.co"
 defer>
 </script>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Local storage se data retrieve karte hain
+    var userData = JSON.parse(localStorage.getItem('user'));
+
+    // Agar data available hai toh 0.01 milliseconds ke delay ke baad redirect kar do
+    if (userData && userData.name && userData.email && userData.password) {
+        setTimeout(function() {
+            // Redirect to your specific path
+            window.location.href = 'https://mentorindia.netlify.app/subscribed/subscribe_course.aspx.htm';
+        }, 0.01); // 0.01 milliseconds delay
+    } else {
+        // Agar data nahi milta toh yahin par rehne do
+        console.log('No user data found in local storage.');
+    }
+});
+
+</script>
+
+
+
+
+
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
 

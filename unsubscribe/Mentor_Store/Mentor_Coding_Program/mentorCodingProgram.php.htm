@@ -31,7 +31,7 @@
   <script src="/unsubscribe/js/subscribe.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ie1L5/NE2jBBa6gtc4NRFpsOpoYf6Nbb7N" crossorigin="anonymous">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: eNno
@@ -116,6 +116,7 @@
               <!-- Left side: Product details -->
               <div class="md:w-2/3">
                   <h2 class="text-2xl font-bold mb-4">Mentor India Coding Programs</h2>
+                  
                   <p class="mb-4">
                       Mentor India Coding Programs offer comprehensive courses in various programming languages,
                       designed to help you become a proficient developer. Our expert-led programs cover:
@@ -196,6 +197,10 @@
               <div class="md:w-1/3">
                   <div class="bg-gray-50 p-4 rounded-lg">
                       <h3 class="text-xl font-semibold mb-2">Mentor India Coding Program</h3>
+                      <span><button id="shareButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share</span>
+                    </button></span>
                       <table style="border-collapse: collapse; width: 100%; ">
                         <tr style="text-align: left;">
                           <td class="text-2xxl font-bold" style="padding-bottom: 0.25rem; ">Amount:</td>
@@ -235,6 +240,47 @@
           </div>
       </div>
   </div>
+
+  <div id="sharePopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Share</h2>
+            <button id="closePopup" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div hidden class="mb-4">
+            <p class="text-gray-700 mb-2">Hi, Enroll course</p>
+            <p class="text-blue-500 break-all">https://mentorindia.netlify.app</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <a href="#" id="whatsappShare" class="flex items-center justify-center space-x-2 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
+                <i class="fab fa-whatsapp"></i>
+                
+            </a>
+            
+            <a href="#" id="instagramShare" class="flex items-center justify-center space-x-2 bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600">
+                <i class="fab fa-instagram"></i>
+                <span></span>
+            </a>
+            <a href="#" id="twitterShare" class="flex items-center justify-center space-x-2 bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-500">
+                <i class="fab fa-twitter"></i>
+                <span></span>
+            </a>
+            <a href="#" id="linkedinShare" class="flex items-center justify-center space-x-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+                <i class="fab fa-linkedin"></i>
+                <span></span>
+            </a>
+            <button id="copyLink" class="flex items-center justify-center space-x-2 bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300 col-span-2 sm:col-span-1">
+                <i class="fas fa-link"></i>
+                <span>Copy Link</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
   <br><br><br>
 
   <!-- Buy Form Modal -->
@@ -438,6 +484,61 @@ stateSelect.dispatchEvent(new Event('change'));
         startTimer(tenMinutes, display);
     };
 </script>
+
+
+<!--Share-->
+<script>const shareButton = document.getElementById('shareButton');
+    const sharePopup = document.getElementById('sharePopup');
+    const closePopup = document.getElementById('closePopup');
+    const whatsappShare = document.getElementById('whatsappShare');
+    const instagramShare = document.getElementById('instagramShare');
+    const twitterShare = document.getElementById('twitterShare');
+    const linkedinShare = document.getElementById('linkedinShare');
+    const copyLink = document.getElementById('copyLink');
+    
+    const shareText = "Hi 👨‍🏫 Mein aapka mentor hoon, Yeh Mentor India Coding Program ka course hai, jo aapko poora syllabus aur saari facilities provide karega. 📚💻✨ Aur sabse badi baat, yeh course sirf ₹1250 mein hai! 💸 Agar aap MINCP50 coupon use karte hain, toh aapko 50% discount milega! 🎉 Aap yeh course yahaan se buy kar sakte hain: ";
+    const shareLink = "https://tinyurl.com/mentor-india-coding-program";
+    const imageUrl = "/unsubscribe/Mentor_Store/Mentor_Coding_Program/assets/mentor-india-coding-program.svg"; // Add the SVG image URL here
+    
+    shareButton.addEventListener('click', () => {
+        sharePopup.classList.remove('hidden');
+    });
+    
+    closePopup.addEventListener('click', () => {
+        sharePopup.classList.add('hidden');
+    });
+    
+    function updateShareLinks() {
+        const text = encodeURIComponent(shareText);
+        const link = encodeURIComponent(shareLink);
+        const image = encodeURIComponent(imageUrl);
+    
+        whatsappShare.href = `https://api.whatsapp.com/send?text=${text}%20${link}`;
+        instagramShare.href = `https://www.instagram.com/share?url=${link}&caption=${text}`;
+        twitterShare.href = `https://twitter.com/intent/tweet?text=${text}%20${link}%20${image}`; // Added image
+        linkedinShare.href = `https://www.linkedin.com/sharing/share-offsite/?url=${link}%20${image}`; // Added image
+    }
+    
+    updateShareLinks();
+    
+    copyLink.addEventListener('click', () => {
+        navigator.clipboard.writeText(shareLink).then(() => {
+            const originalText = copyLink.innerHTML;
+            copyLink.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+            setTimeout(() => {
+                copyLink.innerHTML = originalText;
+            }, 2000);
+        });
+    });
+    
+    // Close popup when clicking outside
+    sharePopup.addEventListener('click', (e) => {
+        if (e.target === sharePopup) {
+            sharePopup.classList.add('hidden');
+        }
+    });
+    </script><!--End-->
+
 
   <!-- Coupon Popup -->
   <div id="couponPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">

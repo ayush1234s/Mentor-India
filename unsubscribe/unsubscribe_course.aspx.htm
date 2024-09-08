@@ -28,6 +28,10 @@
   <link rel="stylesheet" href="assets/css/course.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/subscribe.js"></script>
+  <script src="/subscribed/assets/js/welcome.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
 
   <!-- =======================================================
   * Template Name: eNno
@@ -47,6 +51,20 @@
     .hidden {
         display: none;
     }
+    .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .email-text {
+            font-size: 0.5px; /* Equivalent to text-xs in Tailwind */
+            color: #6b7280; /* Equivalent to text-gray-500 in Tailwind */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px; /* Adjust this value as needed */
+        }
+        #profile-email{
+          font-size: 10.5px;
+        }
 </style>
 <body>
 
@@ -67,33 +85,46 @@
             <li><a class="nav-link scrollto" href="contactus.php.htm">Contact</a></li>
             <!-- Profile Dropdown -->
             <li class="dropdown">
-                <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a id="profile-name" href="#">Profile</a></li>
-                    <li><a href="/login_Register/login_reg.aspx.htm" id="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav>
-    
+              <a href="#"><img id="profile-badge" class="profile-img" src="default-profile.png" alt="Profile Badge"> <i class="bi bi-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                  <li><a id="profile-name" href="#">Profile</a></li>
+                  
+                  <li><a href="/login_Register/login_reg.aspx.htm" id="logout">Logout</a></li>
+              </ul>
+          </li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const profileEmail = document.getElementById('profile-email');
+          const userEmail = localStorage.getItem('userEmail') || 'No email saved';
+          profileEmail.textContent = userEmail;
+          profileEmail.title = userEmail; // Add tooltip for full email on hover
+      });
+  </script>
+  
     <!-- Popup for Profile Setup -->
     <div id="profile-setup-popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-xl font-semibold mb-4">Setup Your Profile</h2>
-            <form id="profile-setup-form">
-                <div class="mb-4">
-                    <label class="block text-gray-700">Full Name</label>
-                    <input type="text" id="full-name" class="w-full px-3 py-2 border rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700">Upload Profile Photo</label>
-                    <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded" required>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Save Profile</button>
-            </form>
-        </div>
-    </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md">
+          <h2 class="text-xl font-semibold mb-4 text-center">Setup Your Profile</h2>
+          <form id="profile-setup-form">
+            <div class="mb-4">
+              <label class="block text-gray-700">Upload Profile Photo</label>
+              <input type="file" id="profile-photo" accept="image/*" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+          </div>
+
+              <div class="mb-4">
+                  <label class="block text-gray-700">Full Name</label>
+                  <input type="text" id="full-name" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+              </div>
+              
+              <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Save Profile</button>
+          </form>
+      </div>
+  </div>
+  
     </div>
   </header><!-- End Header -->
 
@@ -109,7 +140,16 @@
               </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="/assets/img/hero-img.png" class="img-fluid animated" alt="">
+          <div class="bg-white border-l-4 text-center border-green-500 rounded-lg shadow-md p-4 max-w-md w-full align-items-center justify-center">
+            <div class="flex items-center">
+                <div class="flex-shrink-0" id="welcomeIcon">
+                    <!-- The icon will be added dynamically by JavaScript -->
+                </div>
+                <div class="ml-3">
+                    <p id="welcomeMessage" class="text-sm sm:text-base md:text-lg font-medium text-green-800"></p>
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </div>
@@ -153,7 +193,7 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="78684" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
             <p>Students  </p>
           </div>
 
